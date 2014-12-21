@@ -11,15 +11,19 @@ mode        : selfcontained # {standalone, draft}
 knit        : slidify::knit2slides
 ---
 
-## Read-And-Delete
+## Objective
 
-1. Edit YAML front end
-2. Write using R Markdown
-3. Use an empty line followed by three dashes to separate slides!
+1. The following slides are created to pitch the idea of calculating t tests on randomized data
+2. The input source data can be any of 
+      1. Total Number of Simulations
+      2. Sample Size
+      3. Effect Size
+      4. Variation in data
+3. Output will be t test with p values
 
 --- .class #id 
 
-## Slide 2
+## Input Sources
 
 
 
