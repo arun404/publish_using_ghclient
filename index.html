@@ -4,7 +4,7 @@
   <title>Data Products Project</title>
   <meta charset="utf-8">
   <meta name="description" content="Data Products Project">
-  <meta name="author" content="Arun Vonoz">
+  <meta name="author" content="Arun Vonoz (Dated 12/21/2014)">
   <meta name="generator" content="slidify" />
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta http-equiv="X-UA-Compatible" content="chrome=1">
@@ -33,8 +33,8 @@
         <slide class="title-slide segue nobackground">
   <hgroup class="auto-fadein">
     <h1>Data Products Project</h1>
-    <h2>Get T test on Random values</h2>
-    <p>Arun Vonoz<br/></p>
+    <h2>T test on Random values</h2>
+    <p>Arun Vonoz (Dated 12/21/2014)<br/></p>
   </hgroup>
   <article></article>  
 </slide>
@@ -43,20 +43,19 @@
     <!-- SLIDES -->
     <slide class="" id="slide-1" style="background:;">
   <hgroup>
-    <h3>Objective</h3>
+    <h3>Introduction</h3>
   </hgroup>
   <article data-timings="">
     <ol>
-<li>The following slides are created to pitch the idea of calculating t tests on randomized data</li>
-<li>The input source data can be any of 
-
-<ol>
-<li>Total Number of Simulations</li>
-<li>Sample Size</li>
-<li>Effect Size</li>
-<li>Variation in data</li>
-</ol></li>
-<li>Output will be t test with p values</li>
+<li>The following slides are created to pitch the idea of calculating t tests on randomized data.
+A slider has been provided to take different inputs and generate random data on the fly.</li>
+<li>The input source data can be any of <br> 
+  a. Total Number of Simulations <br>
+  b. Sample Size <br>
+  c. Effect Size <br>
+  d. Variation in data</li>
+<li> Histogram is calculated for t values and p values<br></li>
+<li> Determines the Power and Proportion of Rejected Null values w.r.to change in input</li>
 </ol>
 
   </article>
@@ -68,7 +67,22 @@
     <h3>Input Sources</h3>
   </hgroup>
   <article data-timings="">
-    <pre><code class="r">#hello
+    <h4>Four inputs have been taken in order to calculate t test</h4>
+
+<h4>Below we are considering some defaults to get the random sample data</h4>
+
+<pre><code class="r">    # Below are some Defaults
+    total_sims = 1000
+    sample_size = 20
+    effect_size = 10
+    sd = 1
+    randomsample &lt;- rnorm(total_sims * sample_size, effect_size, sd)
+
+    summary(randomsample)
+</code></pre>
+
+<pre><code>##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##    5.46    9.33   10.00   10.00   10.70   13.90
 </code></pre>
 
   </article>
@@ -80,8 +94,23 @@
     <h3>Processing</h3>
   </hgroup>
   <article data-timings="">
-    <pre><code class="r">#hello2
-</code></pre>
+    <ol>
+<li>T test has been calculated for various input parameters by calculating mean and standard deviation <br></li>
+<li>You can find the working application at below link <br> <a href="https://avonoz.shinyapps.io/CoursePrj/">&quot;Simulate T Test Link&quot; </a></li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h3>Summary Results</h3>
+  </hgroup>
+  <article data-timings="">
+    <p>You can see that modifying one of the input parameters will change Power and Proportion of Rejected Null values on the randomized data
+<br><br>
+Thank you.</p>
 
   </article>
   <!-- Presenter Notes -->
@@ -93,7 +122,7 @@
     <ul>
       <li>
       <a href="#" target="_self" rel='tooltip' 
-        data-slide=1 title='Objective'>
+        data-slide=1 title='Introduction'>
          1
       </a>
     </li>
@@ -107,6 +136,12 @@
       <a href="#" target="_self" rel='tooltip' 
         data-slide=3 title='Processing'>
          3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Summary Results'>
+         4
       </a>
     </li>
   </ul>

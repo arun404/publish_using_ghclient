@@ -1,7 +1,7 @@
 ---
 title       : Data Products Project
-subtitle    : Get T test on Random values
-author      : Arun Vonoz
+subtitle    : T test on Random values
+author      : Arun Vonoz (Dated 12/21/2014)
 job         : 
 framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
 highlighter : highlight.js  # {highlight.js, prettify, highlight}
@@ -11,31 +11,52 @@ mode        : selfcontained # {standalone, draft}
 knit        : slidify::knit2slides
 ---
 
-### Objective
+### Introduction
 
-1. The following slides are created to pitch the idea of calculating t tests on randomized data
-2. The input source data can be any of 
-      1. Total Number of Simulations
-      2. Sample Size
-      3. Effect Size
-      4. Variation in data
-3. Output will be t test with p values
+1. The following slides are created to pitch the idea of calculating t tests on randomized data.
+    A slider has been provided to take different inputs and generate random data on the fly.
+2. The input source data can be any of <br> 
+      a. Total Number of Simulations <br>
+      b. Sample Size <br>
+      c. Effect Size <br>
+      d. Variation in data
+3.  Histogram is calculated for t values and p values      
+4.  Determines the Power and Proportion of Rejected Null values w.r.to change in input
 
 --- .class #id 
 
 ### Input Sources
+#### Four inputs have been taken in order to calculate t test
+#### Below we are considering some defaults to get the random sample data
 
 
 ```r
-#hello
+    # Below are some Defaults
+    total_sims = 1000
+    sample_size = 20
+    effect_size = 10
+    sd = 1
+    randomsample <- rnorm(total_sims * sample_size, effect_size, sd)
+    
+    summary(randomsample)
+```
+
+```
+##    Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+##    5.46    9.33   10.00   10.00   10.70   13.90
 ```
 
 --- .class #id 
 
 ### Processing
 
+1. T test has been calculated for various input parameters by calculating mean and standard deviation <br>
+2. You can find the working application at below link <br> <a href="https://avonoz.shinyapps.io/CoursePrj/">"Simulate T Test Link" </a>
 
-```r
-#hello2
-```
+--- .class #id 
 
+### Summary Results
+
+You can see that modifying one of the input parameters will change Power and Proportion of Rejected Null values on the randomized data
+<br><br>
+Thank you.
